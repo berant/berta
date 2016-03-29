@@ -1,8 +1,13 @@
 package com.berant.berta.data;
 
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "Product")
 public class Product {
-    private Integer id;
+
+    private int id;
     private String name;
     private String description;
     private Category category;
@@ -17,14 +22,18 @@ public class Product {
                 + "}";
     }
 
-    public Integer getId() {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -33,6 +42,7 @@ public class Product {
         this.name = name;
     }
 
+    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -41,6 +51,7 @@ public class Product {
         this.description = description;
     }
 
+    @Column(name = "category_id")
     public Category getCategory() {
         return category;
     }
@@ -49,6 +60,7 @@ public class Product {
         this.category = category;
     }
 
+    @Column(name = "price_buy")
     public double getPriceBuy() {
         return priceBuy;
     }

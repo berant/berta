@@ -1,6 +1,9 @@
 package com.berant.berta.data;
 
+import javax.persistence.*;
 
+@Entity
+@Table(name = "Category")
 public class Category {
 
     public static final String DELIMITER = "->";
@@ -14,6 +17,9 @@ public class Category {
                 + "}";
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -22,6 +28,7 @@ public class Category {
         this.id = id;
     }
 
+    @Column(name = "name")
     public String getName() {
         return name;
     }

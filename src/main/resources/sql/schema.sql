@@ -15,3 +15,22 @@ CREATE TABLE Product (
   , FOREIGN KEY (category_id) REFERENCES Category(id)
 );
 
+CREATE TABLE Client (
+    id INT NOT NULL AUTO_INCREMENT
+  , first_name VARCHAR(20) NOT NULL
+  , last_name VARCHAR(20) NOT NULL
+  , phone VARCHAR(10) NOT NULL
+  , PRIMARY KEY (id)
+);
+
+CREATE TABLE Employee (
+    id INT NOT NULL AUTO_INCREMENT
+  , first_name VARCHAR(20) NOT NULL
+  , last_name VARCHAR(20) NOT NULL
+  , phone VARCHAR(10) NOT NULL
+  , position VARCHAR(20) NOT NULL
+  , rate INT NOT NULL
+  , start_work DATE NOT NULL
+  , end_work DATE
+  , PRIMARY KEY (id)
+);
